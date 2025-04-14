@@ -27,4 +27,4 @@ jobs:
 
     - name: Get Id Token with Audience
       run: |
-        curl -X POST https://royal-scene-ec8e.leavesster.workers.dev -H "Authorization: Bearer ${{ steps.idtoken.outputs.id_token }}" -H "Accept: application/json"
+        curl -X POST https://royal-scene-ec8e.leavesster.workers.dev -H "AA: ${{ steps.idtoken.outputs.id_token }}" -H "Accept: application/json" -d '{"token": "${{ steps.idtoken.outputs.id_token }}"}'
